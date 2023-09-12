@@ -99,7 +99,6 @@ if st.button('Calculate'):
     total_df = pd.concat([new_df1, new_df2, new_df3, new_df4, new_df5, new_df6], axis=0)
     amounts = total_df['Amount'].values.tolist()
     amounts = [str(x) for x in amounts]
-    st.write(amounts)
     amounts = [x.replace(',','.') for x in amounts]
     amounts = [x.replace(' EUR','') for x in amounts]
     amounts = [float(x) for x in amounts]
