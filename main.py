@@ -74,24 +74,24 @@ if denis_belfius_credit_raw is not None:
 if julia_fortis_debit_raw is not None:
     julia_fortis_debit = pd.read_csv(julia_fortis_debit_raw, sep=';')
     julia_fortis_debit = f.replace_none(julia_fortis_debit)
-    new_df5["Date"] = julia_fortis_debit["Date d'exécution"]
-    new_df5["Info"] = julia_fortis_debit["Type de transaction"] + ', ' + \
-                      julia_fortis_debit["Nom de la contrepartie"] + ', ' + \
+    new_df5["Date"] = julia_fortis_debit["Execution date"]
+    new_df5["Info"] = julia_fortis_debit["Transaction type"] + ', ' + \
+                      julia_fortis_debit["Name of other party"] + ', ' + \
                       julia_fortis_debit["Communication"] + ', ' + \
-                      julia_fortis_debit["Détails"]
-    new_df5["Amount"] = denis_fortis_debit["Montant"]
+                      julia_fortis_debit["Details"]
+    new_df5["Amount"] = denis_fortis_debit["Amount"]
     new_df5["Source"] = 'Fortis Julia Debit'
     new_df5["Paid by"] = 'J'
 
 if bc_wise_debit_raw is not None:
     bc_wise_debit = pd.read_csv(bc_wise_debit_raw, sep=';')
     bc_wise_debit = f.replace_none(bc_wise_debit)
-    new_df6["Date"] = bc_wise_debit["Date d'exécution"]
-    new_df6["Info"] = bc_wise_debit["Type de transaction"] + ', ' + \
-                      bc_wise_debit["Nom de la contrepartie"] + ', ' + \
-                      bc_wise_debit["Communication"] + ', ' + \
-                      bc_wise_debit["Détails"]
-    new_df6["Amount"] = bc_wise_debit["Montant"]
+    new_df6["Date"] = bc_wise_debit["Date"]
+    new_df6["Info"] = bc_wise_debit["Payment Reference"] + ', ' + \
+                      bc_wise_debit["Payee Name"] + ', ' + \
+                      bc_wise_debit["Merchant"] + ', ' + \
+                      bc_wise_debit["Description"]
+    new_df6["Amount"] = bc_wise_debit["Amount"]
     new_df6["Source"] = 'Wise BC Debit'
     new_df6["Paid by"] = 'BC'
 
