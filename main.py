@@ -79,7 +79,7 @@ if julia_fortis_debit_raw is not None:
                       julia_fortis_debit["Name of other party"] + ', ' + \
                       julia_fortis_debit["Communication"] + ', ' + \
                       julia_fortis_debit["Details"]
-    new_df5["Amount"] = denis_fortis_debit["Amount"]
+    new_df5["Amount"] = julia_fortis_debit["Amount"]
     new_df5["Source"] = 'Fortis Julia Debit'
     new_df5["Paid by"] = 'J'
 
