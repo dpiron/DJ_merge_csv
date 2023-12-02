@@ -72,7 +72,7 @@ if denis_belfius_credit_raw is not None:
     new_df4["Paid by"] = 'D'
 
 if julia_fortis_debit_raw is not None:
-    julia_fortis_debit = pd.read_csv(julia_fortis_debit_raw, sep=',')
+    julia_fortis_debit = pd.read_csv(julia_fortis_debit_raw, sep=';')
     julia_fortis_debit = f.replace_none(julia_fortis_debit)
     new_df5["Date"] = julia_fortis_debit["Execution date"]
     new_df5["Info"] = julia_fortis_debit["Transaction type"] + ', ' + \
